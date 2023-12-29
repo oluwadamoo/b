@@ -782,6 +782,10 @@ video {
   gap: 20px;
 }
 
+.gap-\[10px\] {
+  gap: 10px;
+}
+
 .overflow-y-hidden {
   overflow-y: hidden;
 }
@@ -942,6 +946,10 @@ video {
   .max-\[620px\]\:\!text-\[0\.65rem\] {
     font-size: 0.65rem !important;
   }
+
+  .max-\[620px\]\:\!text-\[0\.64rem\] {
+    font-size: 0.64rem !important;
+  }
 }
 
 @media (min-width: 640px) {
@@ -963,6 +971,10 @@ video {
 
   .sm\:min-w-\[20px\] {
     min-width: 20px;
+  }
+
+  .sm\:gap-\[15px\] {
+    gap: 15px;
   }
 
   .sm\:px-\[35px\] {
