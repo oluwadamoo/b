@@ -692,6 +692,10 @@ video {
   height: fit-content;
 }
 
+.h-\[15px\] {
+  height: 15px;
+}
+
 .max-h-\[105vh\] {
   max-height: 105vh;
 }
@@ -716,8 +720,16 @@ video {
   width: 20px;
 }
 
+.w-\[15px\] {
+  width: 15px;
+}
+
 .min-w-\[20px\] {
   min-width: 20px;
+}
+
+.min-w-\[15px\] {
+  min-width: 15px;
 }
 
 .max-w-\[620px\] {
@@ -925,6 +937,18 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:h-\[20px\] {
+    height: 20px;
+  }
+
+  .sm\:w-\[20px\] {
+    width: 20px;
+  }
+
+  .sm\:min-w-\[20px\] {
+    min-width: 20px;
+  }
+
   .sm\:px-\[35px\] {
     padding-left: 35px;
     padding-right: 35px;
