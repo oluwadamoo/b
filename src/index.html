@@ -1,0 +1,324 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+
+        body {
+            font-family: 'Diphylleia', serif;
+        }
+
+        .container {
+            min-width: 100vw;
+            background: url('/src/assets/background.jpeg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-bottom: 24px;
+
+        }
+
+        .form {
+            background-color: #f0ede8;
+        }
+
+        .selected {
+            color: #D4AF37;
+        }
+
+        .selected div {
+            border-color: #D4AF37;
+        }
+
+        .selected div .hidden {
+            display: block;
+        }
+
+        .sevillana {
+            font-family: 'Sevillana', cursive;
+        }
+
+        .arrow-down {
+            position: relative;
+        }
+
+        .arrow-down::after {
+            content: "\005E";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            animation: animate-after 0.6s infinite;
+        }
+
+        .arrow-down::before {
+            content: "\005E";
+            position: absolute;
+            top: -10px;
+            left: 0;
+            animation: animate-before 0.6s infinite;
+
+            /* bottom: -4px; */
+        }
+
+        @keyframes animate-before {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes animate-after {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-[#fff] w-[100%]  max-h-[105vh] overflow-y-hidden relative container">
+        <div id="bg" class="absolute w-[100%] h-[100%]">
+            <img src="/src/assets/flower-1.png" class="bg max-[620px]:w-[50%]" />
+            <img src="/src/assets/flower-2.png" class="bg absolute top-[0] right-[0] max-[620px]:w-[50%]" />
+            <img src="/src/assets/flower-3.png" class="bg absolute bottom-[0] right-[0] max-[620px]:w-[50%]" />
+            <img src="/src/assets/flower-4.png" class="bg absolute bottom-[0] left-[0] max-[620px]:w-[50%]" />
+            <img src="/src/assets/flower-6.png"
+                class="z-[13px] bg absolute bottom-[0] right-[45%] max-[620px]:w-[50%]" />
+        </div>
+
+        <div class=" p-[24px] pt-[150px] flex-col flex items-center justify-center ">
+            <h4 class="text-[#fff] text-[1.7rem] font-[800] z-[10] text-center mb-[5px]">Thank you for welcoming Baby
+                Saliu with us
+            </h4>
+
+            <p class="z-[10] text-[#fff]">Gift him/her here</p>
+
+            <div class="flex gap-[12px]">
+                <p class="text-[0.75rem] mt-[5px] text-[#fff]" style="font-style: italic;">Select a gift and scroll down
+                    to
+                    pay</p>
+
+                <p class="rotate-[180deg] mt-[3px] text-[#fff] arrow-down">&#94</p>
+            </div>
+
+            <div class="h-[20px]"></div>
+            <form
+                class=" form rounded-[5px] bg-[#fff] drop-shadow-md relative w-[100%] max-w-[620px] pt-[30px] pb-[70px] z-[10] max-h-[75vh] overflow-y-scroll">
+                <div class="px-[35px] flex flex-col gap-[20px] " id="amountButtons">
+                    <button value="45000" name="amount" type="button" class="selected flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+
+                            Car Seat - <span class="underline font-[600]">&#8358;45,000</span>
+                        </p>
+                    </button>
+                    <button value="17000" type="button" name="amount" class="flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+                            Infant Carrier - <span class="font-[700] underline"> &#8358;
+                                17,000</span>
+                        </p>
+                    </button>
+
+                    <button value="9000" type="button" name="amount" class="flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+                            Baby lotion & Body wash (Boot) - <span class="underline font-[600]">&#8358;
+                                9,000</span>
+                        </p>
+                    </button>
+                    <button value="13000" type="button" name="amount" class="flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+                            Baby lotion, Body wash & Shampoo (Boot) - <span class="underline font-[600]">&#8358;
+                                13,000</span>
+                        </p>
+                    </button>
+                    <button value="17000" type="button" name="amount" class="flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+                            Baby lotion, Body wash, Shampoo & Baby Oil (Boot) - <span
+                                class="underline font-[600]">&#8358;
+                                17,000</span>
+                        </p>
+                    </button>
+                    <button value="24000" type="button" name="amount" class="flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+                            Feeding bottle (Arcent) - <span class="underline font-[600]">&#8358;
+                                24,000</span>
+                        </p>
+                    </button>
+                    <button value="8000" type="button" name="amount" class="flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+                            Sock Set - <span class="underline font-[600]">&#8358;
+                                8,000</span>
+                        </p>
+                    </button>
+                    <button value="6000" type="button" name="amount" class="flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+                            Muttens Set - <span class="underline font-[600]">&#8358;
+                                6,000</span>
+                        </p>
+                    </button>
+                    <button value="12000" type="button" name="amount" class="flex items-center gap-[15px]">
+                        <div
+                            class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                            <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                        </div>
+                        <p>
+                            Toys - <span class="underline font-[600]">&#8358;
+                                12,000</span>
+                        </p>
+                    </button>
+
+
+                    <h4 class="font-[700] underline"> Clothes:</h4>
+                    <div class="px-[20px] flex flex-col gap-[20px]">
+                        <button value="10000" type="button" name="amount" id="20000"
+                            class="flex items-center gap-[15px]">
+                            <div
+                                class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                                <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                            </div>
+                            <p>
+                                Pack of 3 - <span class="underline font-[600]">&#8358;
+                                    10,000</span>
+                            </p>
+                        </button>
+                        <button value="15000" type="button" name="amount" id="20000"
+                            class="flex items-center gap-[15px]">
+                            <div
+                                class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                                <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                            </div>
+                            <p>
+                                Pack of 5 - <span class="underline font-[600]">&#8358;
+                                    15,000</span>
+                            </p>
+                        </button>
+                        <button value="15000" type="button" name="amount" id="20000"
+                            class="flex items-center gap-[15px]">
+                            <div
+                                class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                                <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                            </div>
+                            <p>
+                                Pack of 10 - <span class="underline font-[600]">&#8358;
+                                    20,000</span>
+                            </p>
+                        </button>
+                    </div>
+
+                    <h4 class="font-[700] underline"> Diapers:</h4>
+                    <div class="px-[20px] flex flex-col gap-[20px]">
+                        <button value="12000" type="button" name="amount" id="20000"
+                            class="flex items-center gap-[15px]">
+                            <div
+                                class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                                <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                            </div>
+                            <p>
+                                Hugies - <span class="underline font-[600]">&#8358;
+                                    12,000</span>
+                            </p>
+                        </button>
+                        <button value="6000" type="button" name="amount" id="20000"
+                            class="flex items-center gap-[15px]">
+                            <div
+                                class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                                <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                            </div>
+                            <p>
+                                Kiss kids - <span class="underline font-[600]">&#8358;
+                                    6,000</span>
+                            </p>
+                        </button>
+
+                    </div>
+                    <h4 class="font-[700] underline"> Wipes:</h4>
+                    <div class="px-[20px] flex flex-col gap-[20px]">
+                        <button value="6500" type="button" name="amount" id="20000"
+                            class="flex items-center gap-[15px]">
+                            <div
+                                class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                                <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                            </div>
+                            <p>
+                                Pack of 2 - <span class="underline font-[600]">&#8358;
+                                    6500</span>
+                            </p>
+                        </button>
+                        <button value="10000" type="button" name="amount" id="20000"
+                            class="flex items-center gap-[15px] mb-[50px]">
+                            <div
+                                class="h-[20px] flex items-center justify-center min-w-[20px] w-[20px] border-[2px] rounded-full border-[#ccc]">
+                                <div class="bg-[#D4AF37] h-[10px] w-[10px] rounded-full hidden"></div>
+                            </div>
+                            <p>
+                                Pack of 3 - <span class="underline font-[600]">&#8358;
+                                    10000</span>
+                            </p>
+                        </button>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="z-[10]  w-[100%] flex items-center justify-center">
+                    <button id="submit" type="button"
+                        class="text-[#fff] bg-[#D4AF37] drop-shadow-md h-[45px] w-[130px] rounded-[5px]"> Continue</button>
+                </div>
+            </form>
+
+            <!-- <div class="z-[1000] fixed left-[0] bottom-[10px] w-[100%] my-[30px] flex items-center justify-center">
+                <button id="submit" type="button"
+                    class="text-[#fff] bg-[#D4AF37] drop-shadow-md h-[45px] w-[130px] rounded-[5px]"> Continue</button>
+            </div> -->
+        </div>
+    </div>
+</body>
+
+<script src="/src/main.js"></script>
+
+</html>
