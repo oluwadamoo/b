@@ -901,4 +901,8 @@ video {
   .max-\[620px\]\:\!text-\[0\.7rem\] {
     font-size: 0.7rem !important;
   }
+
+  .max-\[620px\]\:\!text-\[0\.68rem\] {
+    font-size: 0.68rem !important;
+  }
 }
