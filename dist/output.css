@@ -618,6 +618,22 @@ video {
   right: 10px;
 }
 
+.top-\[40px\] {
+  top: 40px;
+}
+
+.top-\[50px\] {
+  top: 50px;
+}
+
+.top-\[60px\] {
+  top: 60px;
+}
+
+.top-\[70px\] {
+  top: 70px;
+}
+
 .z-\[1000\] {
   z-index: 1000;
 }
@@ -875,6 +891,16 @@ video {
 .bg-\[\#fff\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#964B00\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(150 75 0 / var(--tw-bg-opacity));
+}
+
+.bg-\[red\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
 .object-contain {
