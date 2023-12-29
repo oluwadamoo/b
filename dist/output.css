@@ -679,6 +679,15 @@ video {
   height: 45px;
 }
 
+.h-\[105vh\] {
+  height: 105vh;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .max-h-\[105vh\] {
   max-height: 105vh;
 }
@@ -803,6 +812,14 @@ video {
 
 .pt-\[30px\] {
   padding-top: 30px;
+}
+
+.pb-\[50px\] {
+  padding-bottom: 50px;
+}
+
+.pb-\[100px\] {
+  padding-bottom: 100px;
 }
 
 .text-center {
