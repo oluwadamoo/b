@@ -1,10 +1,19 @@
 <!doctype html>
 <html>
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
+    <title>Baby Saliu Gift Registry</title>
+    <meta property="og:title" content="Baby Saliu Gift Registry" />
+    <meta property="og:url" content="https://baby-saliu.vercel.app" />
+    <meta property="og:image" content="https://baby-saliu.vercel.app/src/assets/another-baby.png" />
+    <meta property="og:site_name" content="Baby-Saliu" />
+    <meta property="og:description" content="Website for baby saliu's gift registry" />
+    <link rel="icon" type="image/x-icon" href="/src/assets/favicon.ico">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
@@ -96,6 +105,39 @@
             to {
                 opacity: 1;
             }
+        }
+
+
+        .card {
+            transform-style: preserve-3d;
+            transition: 1s;
+
+        }
+
+        .modal {
+            width: 100%;
+            height: 100%;
+            background-color: #c59464e1;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-active {
+            display: flex;
+        }
+
+        .modal-card {
+            backface-visibility: hidden;
+        }
+
+        .move-card,
+        .move-card .back {
+
+            transform: perspective(399px) rotateY(180deg);
         }
     </style>
 </head>
@@ -341,11 +383,34 @@
 
             </form>
 
-            <div class="w-[100%] h-[100%] bg-[red] z-[100000]"></div>
+            <div class="modal">
+
+                <div class="card h-fit relative w-[95%] sm:w-[620px]">
+                    <div
+                        class="absolute top-[0] bottom-[0] drop-shadow-lg  z-[10000] w-[100%] bg-[#964B00] p-[24px] rounded-[5px] drop-shadow-md flex items-center flex-col modal-card">
+
+                        <div class="w-fit  overflow-hidden">
+                            <img src="/src/assets/another-baby.png"
+                                class="sm:w-[300px] sm:h-[300px] w-[250px] h-[250px] rounded-full object-cover" />
+                        </div>
+
+
+                        <h3 class="mt-[20px] text-[#fff] text-[1.5rem] diphy">Thank you</h3>
+                    </div>
+                    <div
+                        class="back w-[100%] sm:h-[405px] h-[353px] bg-[#964B00] flex items-center justify-center rounded-[5px] ">
+
+
+                        <h3 class="mt-[20px] text-[#fff] text-[1.5rem] diphy">God bless you...</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 
 <script src="/src/main.js"></script>
+<script src="https://js.paystack.co/v1/inline.js">
+</script>
 
 </html>
