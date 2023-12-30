@@ -11,6 +11,7 @@
 
         body {
             font-family: 'Open Sans', sans-serif;
+            color: #964B00;
         }
 
         .diphy {
@@ -31,6 +32,9 @@
         }
 
         .baby-bg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 100%;
             overflow: hidden;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff34);
@@ -38,7 +42,13 @@
 
         .selected {
             color: #D4AF37;
+            letter-spacing: 0.03em;
+            transition: 0.3s;
+            text-shadow: 0.7px 0.5px 0 #ba9c42,
+                5px 5px 15px #964b002b;
         }
+
+
 
         .selected div {
             border-color: #D4AF37;
@@ -89,6 +99,17 @@
             to {
                 opacity: 1;
             }
+        }
+
+
+        @media screen and (max-width: 620px) {
+            .selected {
+                color: #D4AF37;
+                letter-spacing: 0.01em;
+                text-shadow: 0.5px 0.5px 0.01 #ba9c42,
+                    5px 5px 15px #964b002b;
+            }
+
         }
     </style>
 </head>
