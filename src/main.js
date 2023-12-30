@@ -27,21 +27,53 @@ window.addEventListener("resize", handleResize);
 
 const amountButtons = document.getElementById('amountButtons');
 const buttons = amountButtons.querySelectorAll('button');
-let selectedAmount = 10000;
+let selectedAmount = 45000;
 
 buttons.forEach(button => {
 
     button.addEventListener('click', () => {
-        // // Clear selected state from all buttons
         buttons.forEach(btn => btn.classList.remove('selected'));
 
-        // Add selected state to the clicked button
         button.classList.add('selected');
 
-        // Get the selected amount value
         selectedAmount = button.value;
-        // You can perform further actions here with the selected amount value
     });
 });
 
+const email = 'sdamilolajoseph@gmail.com';
+const modal = document.querySelector('.modal')
+const card = document.querySelector('.card')
+
+const submitBtn = document.getElementById('submit')
+
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    var handler = PaystackPop.setup({
+        key: 'pk_test_3220830a672fb0111314c909df6a8192e1cc7c3b',
+        email: `${email}`,
+        amount: `${parseFloat(selectedAmount) * 100}`,
+
+        callback: function (response) {
+            console.log(response)
+            modal.classList.add('modal-active');
+            setTimeout(() => {
+                card.classList.add('move-card');
+
+            }, 2000);
+
+            setTimeout(() => {
+                window.location.reload()
+            }, 4000);
+
+        },
+        onClose: function (e) {
+            console.log(e, 'CLOSED')
+
+        }
+
+    })
+    handler.openIframe()
+
+})
 

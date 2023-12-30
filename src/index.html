@@ -81,6 +81,17 @@
             /* bottom: -4px; */
         }
 
+        .submit:hover {
+            transition: 0.3s;
+
+        }
+
+        .card {
+            transform-style: preserve-3d;
+            transition: 1s;
+
+        }
+
         @keyframes animate-before {
             from {
                 opacity: 1;
@@ -111,6 +122,38 @@
             }
 
         }
+
+        .modal {
+            width: 100%;
+            height: 100%;
+            background-color: #c59464e1;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-active {
+            display: flex;
+        }
+
+        .modal-card {
+            backface-visibility: hidden;
+        }
+
+        .move-card,
+        .move-card .back {
+
+            transform: perspective(399px) rotateY(180deg);
+        }
+
+        /* .modal-card:hover+.back {
+            background-color: yellow;
+            transform: perspective(399px) rotateY(180deg);
+
+        } */
     </style>
 </head>
 
@@ -345,22 +388,43 @@
                     </div>
 
                     <div class="z-[10]   w-[100%] flex items-center justify-center">
-                        <button id="submit" type="button"
-                            class="text-[#fff] bg-[#D4AF37] drop-shadow-md h-[45px] w-[130px] rounded-[5px]"> Continue</button>
+                        <div id="submit"
+                            class="flex items-center justify-center cursor-pointer submit z-[100] bg-[#D4AF37] hover:drop-shadow-sm drop-shadow-md h-[45px] w-[130px] rounded-[5px]"
+                            style="color:#fff;"> Continue</div>
                     </div>
 
                 </div>
 
             </form>
 
-            <!-- <div class="z-[1000] fixed left-[0] bottom-[10px] w-[100%] my-[30px] flex items-center justify-center">
-                <button id="submit" type="button"
-                    class="text-[#fff] bg-[#D4AF37] drop-shadow-md h-[45px] w-[130px] rounded-[5px]"> Continue</button>
-            </div> -->
+            <div class="modal">
+
+                <div class="card h-fit relative w-[95%] sm:w-[620px]">
+                    <div
+                        class="absolute top-[0] bottom-[0] drop-shadow-lg  z-[10000] w-[100%] bg-[#964B00] p-[24px] rounded-[5px] drop-shadow-md flex items-center flex-col modal-card">
+
+                        <div class="w-fit  overflow-hidden">
+                            <img src="/src/assets/another-baby.png"
+                                class="sm:w-[300px] sm:h-[300px] w-[250px] h-[250px] rounded-full object-cover" />
+                        </div>
+
+
+                        <h3 class="mt-[20px] text-[#fff] text-[1.5rem] diphy">Thank you</h3>
+                    </div>
+                    <div
+                        class="back w-[100%] sm:h-[405px] h-[353px] bg-[#964B00] flex items-center justify-center rounded-[5px] ">
+
+
+                        <h3 class="mt-[20px] text-[#fff] text-[1.5rem] diphy">God bless you...</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 
 <script src="/src/main.js"></script>
+<script src="https://js.paystack.co/v1/inline.js">
+</script>
 
 </html>
