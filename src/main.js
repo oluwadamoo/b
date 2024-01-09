@@ -1,4 +1,3 @@
-
 const maxWidth = 1880;
 const percentage = 100;
 
