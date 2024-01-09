@@ -25,7 +25,7 @@ bgs.style.zoom = zoom + "%";
 //change dimension on page resize
 window.addEventListener("resize", handleResize);
 
-const email = 'sdamilolajoseph@gmail.com';
+const email = 'christianaomolara675@gmail.com'
 const modal = document.querySelector('.modal')
 const card = document.querySelector('.card')
 
