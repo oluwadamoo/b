@@ -36,7 +36,7 @@ const items = itemsContainer.querySelectorAll('[aria-label="item"]')
 items.forEach(item => {
     item.addEventListener('click', () => {
         var handler = PaystackPop.setup({
-            key: 'pk_test_3220830a672fb0111314c909df6a8192e1cc7c3b',
+            key: 'pk_live_e06f6a70b2599500232cea549edbc6435ce4e58c',
             email: `${email}`,
             label: item.getAttribute('name'),
             amount: `${parseFloat(item.getAttribute('value')) * 100}`,
