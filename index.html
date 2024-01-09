@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,16 +19,19 @@
 
         body {
             font-family: 'Open Sans', sans-serif;
-            /* color: #BB8E51;*/
+            color: #964B00;
+            background: #964B00;
+
         }
 
         .diphy {
             font-family: 'Diphylleia', serif;
         }
 
+
         .container {
             min-width: 100vw;
-            background: #BB8E51;
+            background: #964B00;
 
             padding-bottom: 24px;
 
@@ -39,11 +41,24 @@
             background-color: #f0ede8;
         }
 
+        .baby-bg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff34);
+        }
+
         .selected {
             color: #D4AF37;
-            font-weight: 600;
-
+            letter-spacing: 0.03em;
+            transition: 0.3s;
+            text-shadow: 0.7px 0.5px 0 #ba9c42,
+                5px 5px 15px #964b002b;
         }
+
+
 
         .selected div {
             border-color: #D4AF37;
@@ -53,13 +68,6 @@
             display: block;
         }
 
-        .sevillana {
-            font-family: 'Sevillana', cursive;
-        }
-
-        .baby {
-            animation: rotate-baby 5s infinite;
-        }
 
         .arrow-down {
             position: relative;
@@ -83,8 +91,10 @@
             /* bottom: -4px; */
         }
 
+        .submit:hover {
+            transition: 0.3s;
 
-
+        }
 
 
         @keyframes animate-before {
@@ -107,6 +117,16 @@
             }
         }
 
+
+        @media screen and (max-width: 620px) {
+            .selected {
+                color: #D4AF37;
+                letter-spacing: 0.001em;
+                text-shadow: 0.5px 0.5px 0.01 #ba9c42,
+                    5px 5px 15px #964b002b;
+            }
+
+        }
 
         .card {
             transform-style: preserve-3d;
@@ -139,12 +159,18 @@
 
             transform: perspective(399px) rotateY(180deg);
         }
+
+        /* .modal-card:hover+.back {
+            background-color: yellow;
+            transform: perspective(399px) rotateY(180deg);
+
+        } */
     </style>
 </head>
 
 <body>
     <div class="bg-[#fff] w-[100%]  h-fit pb-[100px]  relative container">
-        <div id="bg" class="absolute w-[100%] h-[100%]">
+        <div id="bg" class="absolute top-[0] w-[100%] h-[100%]">
             <img src="/src/assets/flower-1.png" class="bg max-[620px]:w-[50%]" />
             <img src="/src/assets/flower-2.png" class="bg absolute top-[0] right-[0] max-[620px]:w-[50%]" />
             <img src="/src/assets/flower-3.png" class="bg absolute bottom-[0] right-[0] max-[620px]:w-[50%]" />
@@ -153,27 +179,241 @@
                 class="z-[13px] bg absolute bottom-[0] right-[45%] max-[620px]:w-[50%]" />
         </div>
 
-        <div class=" p-[24px] pt-[120px] flex-col flex items-center justify-center ">
-            <div>
-                <img src="/src/assets/baby.png" class="w-[300px] h-[300px] object-contain baby" />
-            </div>
-            <h4 class="diphy text-[#fff] text-[1.7rem] font-[800] z-[10] text-center mb-[5px]">Thank you for welcoming
-                Baby
-                Saliu with us
-            </h4>
 
-            <p class="diphy z-[10] text-[#fff]">Gift him/her here</p>
+        <div class=" p-[24px] pt-[120px] flex-col flex items-center justify-center relative">
+            <div class="flex flex-col items-center ">
+                <div class=" relative baby-bg">
+                    <img src="/src/assets/baby-1.png" class="w-[300px] h-[300px] object-contain" />
+                </div>
+                <h4 class="diphy text-[#fff] text-[1.7rem] font-[800] z-[10] text-center mb-[5px]">Thank you for
+                    welcoming
+                    Baby
+                    Saliu with us
+                </h4>
 
-            <div class="flex gap-[12px] diphy">
-                <p class="text-[0.75rem] mt-[5px] text-[#fff]" style="font-style: italic;">Select a gift and scroll down
-                    to
-                    pay</p>
-
-                <p class="rotate-[180deg] mt-[3px] text-[#fff] arrow-down">&#94</p>
+                <p class="diphy z-[10] text-[#fff]">Gift her here</p>
             </div>
 
-            <div class="h-[20px]"></div>
-            <form
+            <div class="h-[25px]"></div>
+            <div class="flex justify-center">
+                <div class="w-[100%] !max-w-[1200px] grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 mb-[20px] "
+                    id="items">
+
+                    <div value="45000" name="Car Seat" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/car_seat.jpeg"
+                            class=" max-h-[381px] max-w-[390px] w-[100%] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Car Seat - <span class="font-[700]">&#8358;45,000</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div value="17000" name="Infant Carrier" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/baby-carrier.jpeg"
+                            class=" max-h-[381px] max-w-[390px] w-[100%] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Infant Carrier - <span class="font-[700]">&#8358;17,000</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div value="9000" name="Baby lotion & Body wash (Boot)" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/wash-lotion.jpeg"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="mt-auto h-[73px] items-center w-[100%] mt-[5px] flex justify-center  p-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Baby lotion & Body wash (Boot) - <span class="font-[700]">&#8358;9,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="13000" name="Baby lotion, Body wash & Shampoo (Boot)" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/lotion-wash-shamp-oil.webp"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Baby lotion, Body wash & Shampoo (Boot) - <span class="font-[700]">&#8358;13,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="17000" name="Baby lotion, Body wash, Shampoo & Baby Oil (Boot)" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/lotion-wash-shamp-oil.webp"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Baby lotion, Body wash, Shampoo & Baby Oil (Boot) - <span
+                                    class="font-[700]">&#8358;17,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="24000" name="Feeding bottle (Avent)" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/feeding-bottle.webp"
+                            class="max-h-[381px] max-w-[390px] h-[301px] md:h-[233px] object-contain " />
+
+                        <div
+                            class="w-[100%] mt-auto items-center h-[73px] flex justify-center py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Feeding bottle (Avent) - <span class="font-[700]">&#8358;24,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="8000" name="Sock Set" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/socks-set.jpeg"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Sock Set - <span class="font-[700]">&#8358;8,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="6000" name="Mittens Set" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/mitten-set.webp"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Mittens Set - <span class="font-[700]">&#8358;6,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="12000" name="Toys" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/toys.jpeg"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Toys - <span class="font-[700]">&#8358;12,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="10000" name="Clothes - Pack of 3" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/pack-5.jpeg"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Clothes - Pack of 3 - <span class="font-[700]">&#8358;10,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="15000" name="Clothes - Pack of 5" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/cloth-pack-3.webp"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Clothes - Pack of 5 - <span class="font-[700]">&#8358;15,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="20000" name="Clothes - Pack of 10" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/cloth-pack-3.webp"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Clothes - Pack of 10 - <span class="font-[700]">&#8358;20,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="12000" name="Diapers - Huggies" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/huggies.png"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Diapers - Huggies - <span class="font-[700]">&#8358;12,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="6000" name="Diapers - Kiss kids" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/kiss-kids.png"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Diapers - Kiss kids - <span class="font-[700]">&#8358;6,000</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="6500" name="Wipes - Pack of 2" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/wipes.jpeg"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Wipes - Pack of 2 - <span class="font-[700]">&#8358;6,500</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div value="10000" name="Wipes - Pack of 3" aria-label="item"
+                        class="flex flex-col active:opacity-[0.6] cursor-pointer w-[100%] overflow-hidden rounded-md drop-shadow-lg bg-[#fff] items-center pt-[24px]">
+                        <img src="/src/assets/wipes.jpeg"
+                            class="max-h-[381px] max-w-[390px] sm:h-[301px] md:h-[233px] object-contain" />
+
+                        <div
+                            class="h-[73px] items-center mt-auto flex justify-center w-[100%] py-[12px] border-t-[1px] border-t-[#964B00]">
+                            <p class="max-w-[90%] font-[600]">
+
+                                Wipes - Pack of 3 - <span class="font-[700]">&#8358;10,000</span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <form
                 class="max-[620px]:!text-[0.64rem] form rounded-[5px] bg-[#fff] drop-shadow-md relative w-[100%] max-w-[620px] pt-[30px] pb-[40px] z-[10]  overflow-y-scroll">
                 <div class="sm:px-[35px] px-[20px] flex flex-col gap-[20px] " id="amountButtons">
                     <button value="45000" name="amount" type="button"
@@ -184,7 +424,7 @@
                         </div>
                         <p>
 
-                            Car Seat - <span class="">&#8358;45,000</span>
+                            Car Seat - <span class="font-[700]">&#8358;45,000</span>
                         </p>
                     </button>
                     <button value="17000" type="button" name="amount"
@@ -205,7 +445,7 @@
                             <div class="bg-[#D4AF37] sm:h-[10px] h-[8px] sm:w-[10px] w-[8px] rounded-full hidden"></div>
                         </div>
                         <p class="">
-                            Baby lotion & Body wash (Boot) - <span class="">&#8358;
+                            Baby lotion & Body wash (Boot) - <span class="font-[700]">&#8358;
                                 9,000</span>
                         </p>
                     </button>
@@ -216,7 +456,7 @@
                             <div class="bg-[#D4AF37] sm:h-[10px] h-[8px] sm:w-[10px] w-[8px] rounded-full hidden"></div>
                         </div>
                         <p class="">
-                            Baby lotion, Body wash & Shampoo (Boot) - <span class="">&#8358;
+                            Baby lotion, Body wash & Shampoo (Boot) - <span class="font-[700]">&#8358;
                                 13,000</span>
                         </p>
                     </button>
@@ -227,7 +467,7 @@
                             <div class="bg-[#D4AF37] sm:h-[10px] h-[8px] sm:w-[10px] w-[8px] rounded-full hidden"></div>
                         </div>
                         <p class="">
-                            Baby lotion, Body wash, Shampoo & Baby Oil (Boot) - <span class="">&#8358;
+                            Baby lotion, Body wash, Shampoo & Baby Oil (Boot) - <span class="font-[700]">&#8358;
                                 17,000</span>
                         </p>
                     </button>
@@ -238,7 +478,7 @@
                             <div class="bg-[#D4AF37] sm:h-[10px] h-[8px] sm:w-[10px] w-[8px] rounded-full hidden"></div>
                         </div>
                         <p>
-                            Feeding bottle (Avent) - <span class="">&#8358;
+                            Feeding bottle (Avent) - <span class="font-[700]">&#8358;
                                 24,000</span>
                         </p>
                     </button>
@@ -248,7 +488,7 @@
                             <div class="bg-[#D4AF37] sm:h-[10px] h-[8px] sm:w-[10px] w-[8px] rounded-full hidden"></div>
                         </div>
                         <p>
-                            Sock Set - <span class="">&#8358;
+                            Sock Set - <span class="font-[700]">&#8358;
                                 8,000</span>
                         </p>
                     </button>
@@ -258,7 +498,7 @@
                             <div class="bg-[#D4AF37] sm:h-[10px] h-[8px] sm:w-[10px] w-[8px] rounded-full hidden"></div>
                         </div>
                         <p>
-                            Mittens Set - <span class="">&#8358;
+                            Mittens Set - <span class="font-[700]">&#8358;
                                 6,000</span>
                         </p>
                     </button>
@@ -269,7 +509,7 @@
                             <div class="bg-[#D4AF37] sm:h-[10px] h-[8px] sm:w-[10px] w-[8px] rounded-full hidden"></div>
                         </div>
                         <p>
-                            Toys - <span class="">&#8358;
+                            Toys - <span class="font-[700]">&#8358;
                                 12,000</span>
                         </p>
                     </button>
@@ -285,7 +525,7 @@
                                 </div>
                             </div>
                             <p>
-                                Pack of 3 - <span class="">&#8358;
+                                Pack of 3 - <span class="font-[700]">&#8358;
                                     10,000</span>
                             </p>
                         </button>
@@ -297,7 +537,7 @@
                                 </div>
                             </div>
                             <p>
-                                Pack of 5 - <span class="">&#8358;
+                                Pack of 5 - <span class="font-[700]">&#8358;
                                     15,000</span>
                             </p>
                         </button>
@@ -309,7 +549,7 @@
                                 </div>
                             </div>
                             <p>
-                                Pack of 10 - <span class="">&#8358;
+                                Pack of 10 - <span class="font-[700]">&#8358;
                                     20,000</span>
                             </p>
                         </button>
@@ -325,7 +565,7 @@
                                 </div>
                             </div>
                             <p>
-                                Huggies - <span class="">&#8358;
+                                Huggies - <span class="font-[700]">&#8358;
                                     12,000</span>
                             </p>
                         </button>
@@ -337,7 +577,7 @@
                                 </div>
                             </div>
                             <p>
-                                Kiss kids - <span class="">&#8358;
+                                Kiss kids - <span class="font-[700]">&#8358;
                                     6,000</span>
                             </p>
                         </button>
@@ -353,7 +593,7 @@
                                 </div>
                             </div>
                             <p>
-                                Pack of 2 - <span class="">&#8358;
+                                Pack of 2 - <span class="font-[700]">&#8358;
                                     6500</span>
                             </p>
                         </button>
@@ -365,7 +605,7 @@
                                 </div>
                             </div>
                             <p>
-                                Pack of 3 - <span class="">&#8358;
+                                Pack of 3 - <span class="font-[700]">&#8358;
                                     10000</span>
                             </p>
                         </button>
@@ -378,10 +618,9 @@
                             style="color:#fff;"> Continue</div>
                     </div>
 
-
                 </div>
 
-            </form>
+            </form> -->
 
             <div class="modal">
 
